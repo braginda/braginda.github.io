@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { useSwipeable } from 'react-swipeable';
 import { GridItem } from '../GridItem/GridItem';
 import {
-  ViewBottomCenter,
-  ViewBottomLeft,
+  ViewSkillsAndTechs,
+  ViewMyInterests,
   ViewWrk,
   ViewWelcome,
-  ViewCenterLeft,
+  ViewSelfSale,
   ViewTrueEngineering,
   ViewBcs,
   ViewAbout,
@@ -60,7 +60,7 @@ export const Grid: React.FC<GridProps> = () => {
   return (
     <StyledGrid {...handlers} offset={gridOffsets[position.y][position.x]}>
       <GridItem active={position.y === 0 && position.x === 0}>
-        <ViewBottomCenter />
+        <ViewSkillsAndTechs />
       </GridItem>
       <GridItem active={position.y === 0 && position.x === 1} scrollable>
         <ViewBcs />
@@ -69,7 +69,7 @@ export const Grid: React.FC<GridProps> = () => {
         <ViewTrueEngineering />
       </GridItem>
       <GridItem active={position.y === 1 && position.x === 0}>
-        <ViewCenterLeft />
+        <ViewSelfSale />
       </GridItem>
       <GridItem active={position.y === 1 && position.x === 1}>
         <ViewWelcome />
@@ -78,7 +78,7 @@ export const Grid: React.FC<GridProps> = () => {
         <ViewCft />
       </GridItem>
       <GridItem active={position.y === 2 && position.x === 0}>
-        <ViewBottomLeft />
+        <ViewMyInterests />
       </GridItem>
       <GridItem active={position.y === 2 && position.x === 1} scrollable>
         <ViewAbout />
