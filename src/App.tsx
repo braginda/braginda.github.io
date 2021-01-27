@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled, { ThemeProvider } from 'styled-components';
+import { Grid } from './components/Grid/Grid';
+import './i18n';
+import { GlobalStyle, theme } from './theme';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <ViewportBlocker>
+          <Grid />
+        </ViewportBlocker>
+      </ThemeProvider>
+    </React.Fragment>
   );
-}
+};
 
-export default App;
+const ViewportBlocker = styled.div`
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  overflow: hidden;
+  color: ${props => props.theme.palette.primary.main};
+`;
