@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSwipeable } from 'react-swipeable';
-import { GridItem } from '../GridItem';
+import { GridItem } from '../GridItem/GridItem';
 import {
   ViewBottomCenter,
   ViewBottomLeft,
   ViewWrk,
   ViewWelcome,
   ViewCenterLeft,
-  ViewCenterRight,
-  ViewTopCenter,
+  ViewTrueEngineering,
+  ViewBcs,
   ViewAbout,
-  ViewTopRight,
+  ViewCft,
 } from '../../views';
 import { useWindowEvent } from '../../hooks';
 import { gridOffsets, Offset, Position } from './constants';
@@ -62,11 +62,11 @@ export const Grid: React.FC<GridProps> = () => {
       <GridItem active={position.y === 0 && position.x === 0}>
         <ViewBottomCenter />
       </GridItem>
-      <GridItem active={position.y === 0 && position.x === 1}>
-        <ViewTopCenter />
+      <GridItem active={position.y === 0 && position.x === 1} scrollable>
+        <ViewBcs />
       </GridItem>
-      <GridItem active={position.y === 0 && position.x === 2}>
-        <ViewTopRight />
+      <GridItem active={position.y === 0 && position.x === 2} scrollable>
+        <ViewTrueEngineering />
       </GridItem>
       <GridItem active={position.y === 1 && position.x === 0}>
         <ViewCenterLeft />
@@ -75,7 +75,7 @@ export const Grid: React.FC<GridProps> = () => {
         <ViewWelcome />
       </GridItem>
       <GridItem active={position.y === 1 && position.x === 2}>
-        <ViewCenterRight />
+        <ViewCft />
       </GridItem>
       <GridItem active={position.y === 2 && position.x === 0}>
         <ViewBottomLeft />
@@ -83,7 +83,7 @@ export const Grid: React.FC<GridProps> = () => {
       <GridItem active={position.y === 2 && position.x === 1} scrollable>
         <ViewAbout />
       </GridItem>
-      <GridItem active={position.y === 2 && position.x === 2}>
+      <GridItem active={position.y === 2 && position.x === 2} scrollable>
         <ViewWrk />
       </GridItem>
     </StyledGrid>

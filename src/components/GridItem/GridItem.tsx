@@ -53,6 +53,7 @@ export const GridItem: React.FC<GridItemProps> = ({ children, active, scrollable
 
 const StyledGridItem = styled.div<GridItemProps>`
   padding: ${props => props.theme.spacing(3)};
+  overflow-x: hidden;
   overflow-y: ${props => (props.scrollable ? 'auto' : 'hidden')};
 
   @media (min-width: ${props => props.theme.breakpoints.md}) and (orientation: portrait) {

@@ -2,7 +2,7 @@ import React from 'react';
 import anime from 'animejs';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { Portrait } from '../components/Portrait';
+import { Portrait } from '../components/Portrait/Portrait';
 
 interface ViewWelcomeProps {}
 

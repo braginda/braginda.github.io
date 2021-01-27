@@ -1,6 +1,6 @@
 import React from 'react';
-import photo from '../assets/images/57BA81B6.jpeg';
-import { palette } from '../theme/palette';
+import photo from '../../assets/images/ma-face.jpeg';
+import { palette } from '../../theme/palette';
 
 interface PortraitProps {}
 
